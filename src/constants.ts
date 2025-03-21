@@ -362,3 +362,5 @@ export const PARTY_OPTIONS = [
 ];
 
 export const MAX_VOTES = 12;
+export const SEPOLIA_NETWORK = "sepolia";
+export const SEPOLIA_NETWORK_CHAIN_ID = "0xaa36a7";

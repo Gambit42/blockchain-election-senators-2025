@@ -134,8 +134,8 @@ const RankingTable = () => {
       meta: { size: "30px" },
       cell: ({ row }) => (
         <div className="!shrink-0 flex flex-col gap-2 font-poppins">
-          <h1 className="leading-[10px] font-medium">{row.original.name}</h1>
-          <p className="font-light leading-[20px]">{row.original.party}</p>
+          <h1 className="lg:leading-[10px] font-medium">{row.original.name}</h1>
+          <p className="font-lightlg:leading-[20px] ">{row.original.party}</p>
         </div>
       ),
     },
@@ -198,6 +198,9 @@ const RankingTable = () => {
       <h1 className="text-left w-full font-bold text-2xl">
         Senatorial Rankings
       </h1>
+      <p className="font-poppins text-xs italic">
+        First page shows the top 12 candidates
+      </p>
       <table className="w-full my-4">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -241,7 +244,7 @@ const RankingTable = () => {
                       return (
                         <td
                           key={cell.id}
-                          className={`h-[70px] ${
+                          className={`min-h-[100px] lg:h-[70px] ${
                             isFirstTwo ? "text-left" : "text-right"
                           } px-2`}
                         >
@@ -254,13 +257,16 @@ const RankingTable = () => {
               })
             : table.getRowModel().rows.map((row) => {
                 return (
-                  <tr key={row.id} className={` border-b`}>
+                  <tr
+                    key={row.id}
+                    className={` border-b min-h-[100px] lg:h-[70px]`}
+                  >
                     {row.getVisibleCells().map((cell, index) => {
                       const isFirstTwo = [0, 1].includes(index);
                       return (
                         <td
                           key={cell.id}
-                          className={`h-[70px] ${
+                          className={`h-full ${
                             isFirstTwo ? "text-left" : "text-right"
                           } px-2`}
                         >
